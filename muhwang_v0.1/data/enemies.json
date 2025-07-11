@@ -1,0 +1,9 @@
+[
+  {
+    "id": "bandit_leader",
+    "name": "산적 두목",
+    "hp": 30,
+    "atk": 5,
+    "description": "산속을 터전 삼아 약탈을 일삼는 무리의 두목."
+  }
+]

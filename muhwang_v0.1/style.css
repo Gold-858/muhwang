@@ -1,0 +1,10 @@
+body {
+  background-color: #111;
+  color: #eee;
+  font-family: 'Nanum Gothic', sans-serif;
+  padding: 20px;
+}
+#game {
+  max-width: 600px;
+  margin: auto;
+}
