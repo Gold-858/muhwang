@@ -1,15 +1,92 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <title>천하재림 - 무황</title>
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>천하재림: 무황</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['Noto Serif KR', 'serif']
+          },
+          colors: {
+            primary: '#c4a484',
+            surface: '#ffffffcc'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #f5efe6;
+    }
+  </style>
 </head>
-<body>
-  <div id="game">
-    <h1>천하재림: 무황</h1>
-    <pre id="log">게임이 시작됩니다...</pre>
-  </div>
-  <script type="module" src="engine/main.js"></script>
+<body class="font-serif text-gray-900">
+  <!-- 🧍 상단 고정 주인공 상태창 -->
+  <section class="bg-[#f5efe6] border border-gray-300 rounded-md p-6 shadow-sm mb-4 mt-4 w-[850px] mx-auto">
+    <div class="text-base text-gray-800">
+      <span class="font-bold text-primary">이름:</span> <span class="text-gray-600">초보 무사</span>
+      <span class="mx-2">|</span>
+      <span class="font-bold text-primary">나이:</span> <span class="text-gray-600">16 / 60세</span>
+      <span class="mx-2">|</span>
+      <span class="font-bold text-primary">경지:</span> <span class="text-gray-600">삼류</span>
+      <span class="mx-2">|</span>
+      <span class="font-bold text-primary">문파:</span> <span class="text-gray-600">없음</span>
+      <span class="mx-2">|</span>
+      <span class="font-bold text-primary">체력:</span> <span class="text-gray-600">❤️ 100 / 100</span>
+      <span class="mx-2">|</span>
+      <span class="font-bold text-primary">내공:</span> <span class="text-gray-600">🌀 50</span>
+    </div>
+  </section>
+  <main class="max-w-4xl mx-auto px-6">
+    <!-- 💠 현재 진행 상황 -->
+    <section class="bg-[#f5efe6] border border-gray-300 rounded-md p-6 shadow-sm mb-4 min-h-[500px]">
+      <h2 class="text-xl font-semibold text-gray-800 mb-2">📜 현재 진행 상황</h2>
+      <div id="log" class="text-sm text-gray-700 leading-relaxed space-y-2">
+        <p>아직 어떤 행동도 선택하지 않았습니다.</p>
+      </div>
+    </section>
+
+    <!-- 📦 무공 관련 UI -->
+    <div class="grid grid-cols-2 gap-6 mb-4">
+      <section class="bg-[#f5efe6] border border-gray-300 rounded-md p-6 shadow-sm min-h-[260px] max-h-[300px] overflow-y-auto">
+        <h2 class="text-xl font-semibold text-gray-800 mb-2">📦 보유 무공</h2>
+        <div class="text-sm text-gray-700 space-y-1">
+          <p>무공: 철권 (무술・삼류) — 숙련도 ★☆☆☆☆☆☆☆☆☆☆</p>
+          <p class="text-xs text-gray-500">※ 전투/수련 시 자동 숙련도 상승</p>
+        </div>
+      </section>
+      <section class="bg-[#f5efe6] border border-gray-300 rounded-md p-6 shadow-sm min-h-[260px]">
+        <h2 class="text-xl font-semibold text-gray-800 mb-2">🧾 무공 관리</h2>
+        <div class="text-sm text-gray-700">
+          <p>보유한 무공을 정리하거나, 기억에서 지울 수 있습니다.</p>
+          <ul class="list-disc list-inside text-xs mt-2 text-gray-600">
+            <li>무공 '철권'을 기억에서 제거</li>
+            <li>숙련도 순 정렬</li>
+            <li>종류별 필터: 심법 / 신법 / 무술 / 절기 / 오의</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+
+    <!-- 🔘 행동 선택 UI -->
+    <section class="bg-[#f5efe6] border border-gray-300 rounded-md p-6 shadow-sm mb-4 mt-0">
+      <div class="grid grid-cols-3 gap-6 justify-center">
+        <section class="bg-[#f5efe6] border border-gray-300 rounded-md p-4 shadow-sm text-center">🧭 탐험</section>
+        <section class="bg-[#f5efe6] border border-gray-300 rounded-md p-4 shadow-sm text-center">📚 수련</section>
+        <section class="bg-[#f5efe6] border border-gray-300 rounded-md p-4 shadow-sm text-center">📖 연대기</section>
+      </div>
+      <div class="grid grid-cols-2 gap-6 justify-center mt-6 w-2/3 mx-auto">
+        <section class="bg-[#f5efe6] border border-gray-300 rounded-md p-4 shadow-sm text-center">🗡️ 비무행</section>
+        <section class="bg-[#f5efe6] border border-gray-300 rounded-md p-4 shadow-sm text-center">⚱️ 생사결</section>
+      </div>
+    </section>
+  </main>
 </body>
 </html>
